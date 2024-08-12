@@ -1,8 +1,7 @@
-
-import folium
 import streamlit as st
+import folium
 from streamlit_folium import st_folium
-# Simplified datasets for major rivers and mountain ranges
+
 rivers = [
     {"name": "Ganga", "location": [25.5941, 85.1376], "description": "The Ganga is the longest river in India, flowing through the northern plains and considered sacred by Hindus."},
     {"name": "Yamuna", "location": [28.7041, 77.1025], "description": "The Yamuna is a major river in Northern India, flowing alongside the Ganga and passing through Delhi."},
@@ -61,7 +60,7 @@ for mountain in mountains:
         icon=folium.Icon(color="green", icon="cloud"),
     ).add_to(m)
 
-
+# Display the map
 st_folium(m, width=700, height=500)
 
 # User interaction for learning
@@ -80,6 +79,3 @@ elif option == "Mountain Ranges":
         if st.sidebar.button(mountain['name']):
             st.subheader(mountain['name'])
             st.write(mountain['description'])
-
-
-
